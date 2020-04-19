@@ -27,7 +27,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Atesh.PostSharp" Version="1.0.1" />
+    <PackageReference Include="Atesh.PostSharp" Version="1.0.0" />
     <PackageReference Include="PostSharp" Version="6.5.7" />
   </ItemGroup>
 
