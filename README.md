@@ -1,6 +1,15 @@
+
 # Atesh
 
 Atesh library is a collection of utilities.
+
+## Highlights
+
+- **ArgumentNullOrWhiteSpaceException:** Used for String parameter validation.
+- **NotNullOrWhiteSpace** PostSharp aspect: Used together with its exception type.
+- **IInternalsProvider** interface and **BaseClassExplicitInterfaceInvoker** class: Used for implementing "Internals" pattern.
+- **Extension methods** for some built-in types: Float, String, TimeSpan, etc...
+
 
 # Team Members
 
