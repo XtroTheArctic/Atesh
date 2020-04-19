@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Configurations>Release</Configurations>
+    <Version>0</Version>
+    <Company>Atesh Entertainment Inc.</Company>
+    <Product>Atesh</Product>
+    <Authors>The team members are listed in README.md file on project web page.</Authors>
+    <PackageLicenseUrl>http://unlicense.org</PackageLicenseUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>Atesh, Utilities</PackageTags>
+    <AssemblyVersion>0.0.0.0</AssemblyVersion>
+    <FileVersion>0.0.0.0</FileVersion>
+    <PackageProjectUrl>https://bitbucket.org/XtroTheArctic/atesh</PackageProjectUrl>
+    <RepositoryUrl>git@bitbucket.org:XtroTheArctic/atesh</RepositoryUrl>
+    <Description>Atesh library is a collection of utilities.</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>bin</OutputPath>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <NoWarn />
+    <PostSharpEscalatedMessages>*</PostSharpEscalatedMessages>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Atesh.PostSharp" Version="1.0.0" />
+    <PackageReference Include="PostSharp" Version="6.5.7" />
+  </ItemGroup>
+
+</Project>
