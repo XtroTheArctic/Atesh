@@ -1,0 +1,23 @@
+# Absolute folders
+# --------------
+
+#/Xxxx/xxxx
+
+# Absolute files
+# ------------
+
+# /*.xxx
+
+# Folders everywhere
+# ------------------
+
+.vs
+bin
+obj
+
+# Files everywhere
+# ----------------
+
+*.suo
+*.user
+*.userprefs
