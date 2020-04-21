@@ -40,7 +40,7 @@ Please feel free to contact the team members via email at any time.
 
 If you want to build the library from source code to contribute to the project or for another reason, you must install the PostSharp Visual Studio extension first.
 
-This library **includes an open-source licence key for PostSharp** which means that you don't have to buy a PostSharp licence in order to build this library from source code.
+After installing the extension, you need to get a PostSharp community license for free. You can request the license in PostSharp license section of Visual Studio options window or on thier website directly.
 
 PostSharp is the #1 pattern-aware extension to C# and VB. It allows developers to eradicate boilerplate by offloading repeating work from humans to machines. Please see [PostSharp Documentation](https://doc.postsharp.net) for more info.
 
