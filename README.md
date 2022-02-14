@@ -4,6 +4,7 @@ Atesh library is a collection of utilities.
 
 ## Highlights
 
+- **OrderedHashSet:** A better HashSet alternative.
 - **ArgumentNullOrWhiteSpaceException:** Used for String parameter validation.
 - **NotNullOrWhiteSpace** PostSharp aspect: Used together with its exception type.
 - **IInternalsProvider** interface and **BaseClassExplicitInterfaceInvoker** class: Used for implementing "Internals" pattern.
