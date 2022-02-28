@@ -91,28 +91,27 @@ namespace Atesh
                     else StringBuilder.Append(This.Seconds);
 
                     break;
-                default: // Pass through any non recognised characters  
+                default: // Pass through any non recognized characters  
                     StringBuilder.Append(Format[I]);
 
                     break;
                 }
             }
 
-            if (TrimLeadingNonNumerics)
+            if (!TrimLeadingNonNumerics) return StringBuilder.ToString();
+
+            var TrimLength = 0;
+
+            for (var I = 0; I < StringBuilder.Length; I++)
             {
-                var TrimLength = 0;
+                if (char.IsNumber(StringBuilder[I])) continue;
 
-                for (var I = 0; I < StringBuilder.Length; I++)
-                {
-                    if (char.IsNumber(StringBuilder[I])) continue;
+                TrimLength = I + 1;
 
-                    TrimLength = I + 1;
-
-                    break;
-                }
-
-                StringBuilder.Remove(0, TrimLength);
+                break;
             }
+
+            StringBuilder.Remove(0, TrimLength);
 
             return StringBuilder.ToString();
         }

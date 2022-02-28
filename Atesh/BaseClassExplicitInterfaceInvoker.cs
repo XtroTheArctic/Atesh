@@ -3,6 +3,7 @@
 //
 // Modified by Onur "Xtro" Er and included in Atesh Framework / October 2017.
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -24,7 +25,7 @@ namespace Atesh
                 if ((BaseType = BaseType.BaseType) == typeof(object)) break;
 
                 var Methods = BaseType.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly);
-                Result = Methods.FirstOrDefault(X => X.IsFinal && X.IsPrivate && (X.Name == MethodName || X.Name.EndsWith("." + MethodName)));
+                Result = Methods.FirstOrDefault(X => X.IsFinal && X.IsPrivate && (X.Name == MethodName || X.Name.EndsWith("." + MethodName, StringComparison.Ordinal)));
             }
 
             if (Result != null) Cache.Add(MethodName, Result);
