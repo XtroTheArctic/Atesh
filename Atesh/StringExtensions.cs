@@ -1,9 +1,8 @@
 ﻿using System;
 
-namespace Atesh
+namespace Atesh;
+
+public static class StringExtensions
 {
-    public static class StringExtensions
-    {
-        public static string Replace(this string This, char[] OldChars, string NewValue) => string.Join(NewValue, This.Split(OldChars, StringSplitOptions.RemoveEmptyEntries));
-    }
+    public static string Replace(this string This, char[] OldChars, string NewValue) => string.Join(NewValue, This.Split(OldChars, StringSplitOptions.RemoveEmptyEntries));
 }

@@ -23,6 +23,7 @@
     <WarningsAsErrors />
     <NoWarn />
     <PostSharpEscalatedMessages>*</PostSharpEscalatedMessages>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>

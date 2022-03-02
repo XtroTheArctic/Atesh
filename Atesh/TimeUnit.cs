@@ -1,13 +1,12 @@
-﻿namespace Atesh
+﻿namespace Atesh;
+
+public enum TimeUnit
 {
-    public enum TimeUnit
-    {
-        Millisecond,
-        Second,
-        Minute,
-        Hour,
-        Day,
-        Month,
-        Year
-    }
+    Millisecond,
+    Second,
+    Minute,
+    Hour,
+    Day,
+    Month,
+    Year
 }

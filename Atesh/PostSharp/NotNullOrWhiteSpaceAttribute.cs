@@ -3,11 +3,10 @@ using PostSharp.Aspects;
 using PostSharp.Reflection;
 using PostSharp.Serialization;
 
-namespace Atesh.PostSharp
+namespace Atesh.PostSharp;
+
+[PSerializable]
+public class NotNullOrWhiteSpaceAttribute : LocationContractAttribute, ILocationValidationAspect<string>
 {
-    [PSerializable]
-    public class NotNullOrWhiteSpaceAttribute : LocationContractAttribute, ILocationValidationAspect<string>
-    {
-        public Exception ValidateValue(string Value, string LocationName, LocationKind LocationKind, LocationValidationContext Context) => string.IsNullOrWhiteSpace(Value) ? new ArgumentNullOrWhiteSpaceException(LocationName) : null;
-    }
+    public Exception ValidateValue(string Value, string LocationName, LocationKind LocationKind, LocationValidationContext Context) => string.IsNullOrWhiteSpace(Value) ? new ArgumentNullOrWhiteSpaceException(LocationName) : null;
 }
