@@ -28,7 +28,7 @@ public class BaseClassExplicitInterfaceInvoker<T>
             Result = Methods.FirstOrDefault(X => X.IsFinal && X.IsPrivate && (X.Name == MethodName || X.Name.EndsWith("." + MethodName, StringComparison.Ordinal)));
         }
 
-        if (Result != null) Cache.Add(MethodName, Result);
+        if (Result is { }) Cache.Add(MethodName, Result);
 
         return Result;
     }
