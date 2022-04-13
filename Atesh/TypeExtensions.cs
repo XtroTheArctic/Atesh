@@ -13,7 +13,7 @@ public static class TypeExtensions
     public static string NameAndNameSpace(this Type This)
     {
         var FullName = This.FullName;
-        var Result = FullName.Substring(FullName.LastIndexOf('.') + 1);
+        var Result = FullName[(FullName.LastIndexOf('.') + 1)..];
         if (!string.IsNullOrWhiteSpace(This.Namespace)) Result = $"{Result} ({This.Namespace})";
              
         return Result;
