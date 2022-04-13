@@ -8,32 +8,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Atesh
+namespace Atesh;
+
+public class BaseClassExplicitInterfaceInvoker<T>
 {
-    public class BaseClassExplicitInterfaceInvoker<T>
+    readonly Dictionary<string, MethodInfo> Cache = new();
+
+    MethodInfo FindMethod(string MethodName)
     {
-        readonly Dictionary<string, MethodInfo> Cache = new Dictionary<string, MethodInfo>();
+        if (Cache.TryGetValue(MethodName, out var Result)) return Result;
 
-        MethodInfo FindMethod(string MethodName)
+        var BaseType = typeof(T);
+
+        while (Result == null)
         {
-            if (Cache.TryGetValue(MethodName, out var Result)) return Result;
+            if ((BaseType = BaseType.BaseType) == typeof(object)) break;
 
-            var BaseType = typeof(T);
-
-            while (Result == null)
-            {
-                if ((BaseType = BaseType.BaseType) == typeof(object)) break;
-
-                var Methods = BaseType.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly);
-                Result = Methods.FirstOrDefault(X => X.IsFinal && X.IsPrivate && (X.Name == MethodName || X.Name.EndsWith("." + MethodName, StringComparison.Ordinal)));
-            }
-
-            if (Result != null) Cache.Add(MethodName, Result);
-
-            return Result;
+            var Methods = BaseType.GetMethods(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly);
+            Result = Methods.FirstOrDefault(X => X.IsFinal && X.IsPrivate && (X.Name == MethodName || X.Name.EndsWith("." + MethodName, StringComparison.Ordinal)));
         }
 
-        public void Invoke(T Object, string MethodName, params object[] Parameters) => FindMethod(MethodName).Invoke(Object, Parameters);
-        public ReturnType Invoke<ReturnType>(T Object, string MethodName, params object[] Parameters) => (ReturnType)FindMethod(MethodName).Invoke(Object, Parameters);
+        if (Result is { }) Cache.Add(MethodName, Result);
+
+        return Result;
     }
+
+    public void Invoke(T Object, string MethodName, params object[] Parameters) => FindMethod(MethodName).Invoke(Object, Parameters);
+    public ReturnType Invoke<ReturnType>(T Object, string MethodName, params object[] Parameters) => (ReturnType)FindMethod(MethodName).Invoke(Object, Parameters);
 }
