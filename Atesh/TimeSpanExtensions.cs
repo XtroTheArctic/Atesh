@@ -98,20 +98,19 @@ public static class TimeSpanExtensions
             }
         }
 
-        if (!TrimLeadingNonNumerics) return StringBuilder.ToString();
-
-        var TrimLength = 0;
-
-        for (var I = 0; I < StringBuilder.Length; I++)
+        if (!TrimLeadingNonNumerics)
         {
-            if (char.IsNumber(StringBuilder[I])) continue;
+            var TrimLength = 0;
 
-            TrimLength = I + 1;
+            for (var I = 0; I < StringBuilder.Length; I++)
+            {
+                if (char.IsNumber(StringBuilder[I])) break;
 
-            break;
+                TrimLength = I + 1;
+            }
+
+            StringBuilder.Remove(0, TrimLength);
         }
-
-        StringBuilder.Remove(0, TrimLength);
 
         return StringBuilder.ToString();
     }
