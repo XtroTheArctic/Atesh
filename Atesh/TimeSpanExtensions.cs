@@ -27,7 +27,7 @@ public static class TimeSpanExtensions
     /// <param name="FixedUnit">The time units below the given unit(including itself) will be displayed even if the time value is zero.</param>
     /// <param name="TrimLeadingNonNumerics">Set this to false for leading non numeric characters not to be trimmed. The default value is true.</param>
     /// <returns>Formatted string representation of the TimeSpan</returns>  
-    public static string ToString(this TimeSpan This, string Format, TimeUnit? FixedUnit = null, bool TrimLeadingNonNumerics = true)
+    public static string ToStringExtended(this TimeSpan This, string Format, TimeUnit? FixedUnit = null, bool TrimLeadingNonNumerics = true)
     {
         var StringBuilder = new StringBuilder();
 
