@@ -29,7 +29,16 @@ public static class TypeExtensions
         if (FieldsAndProperties.ContainsKey(This)) return FieldsAndProperties[This];
 
         var Result = new List<MemberInfo>();
-        Result.AddRange(This.GetMembers(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).Where(X => X.MemberType is MemberTypes.Field or MemberTypes.Property));
+
+        // GetMembers doesn't return inherited private fields so, we loop for base classes with DeclaredOnly flag.
+        var Type = This;
+
+        while (Type != typeof(object))
+        {
+            Result.AddRange(Type.GetMembers(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly).Where(X => X.MemberType is MemberTypes.Field or MemberTypes.Property));
+
+            Type = Type.BaseType;
+        }
 
         return FieldsAndProperties[This] = Result.AsReadOnly();
     }
