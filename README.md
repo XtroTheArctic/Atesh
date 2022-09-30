@@ -25,6 +25,29 @@ Download it via "manual download" link in [NuGet](https://www.nuget.org/packages
 
 "nupkg" file you downloaded from NuGet web page is a regular zip file. You can change its extension to "zip" and extract it easily.
 
+# Distribution
+
+Atesh library references Atesh.Metalama library which references Metalama.Framework library therefore, referencing Atesh in your own project will automatically make your project to use the Metalama system.
+
+By using Metalama system in your project, you will be able to implement your own Metalama aspects. If that's what you want, you can keep the package reference in your `.csproj` file unmodified:
+
+```
+  <ItemGroup>
+    <PackageReference Include="Atesh" Version="CHANGE ME" />
+  </ItemGroup>
+```
+
+If you just want to use the existing symbols (classes, types, methods, aspects) from Atesh and Atesh.Metalama libraries and don't want to implement your own aspects, then you should modify the package reference by adding a PrivateAssets value:
+
+```
+  <ItemGroup>
+    <PackageReference Include="Atesh" Version="CHANGE ME" PrivateAssets="all" />
+    <PackageReference Include="Atesh.Metalama" Version="CHANGE ME" PrivateAssets="all" />
+  </ItemGroup>
+```
+
+You can see the distribution section of [Metalama Documentation](https://doc.metalama.net/deployment/distributing) for more info.
+
 # Contribution
 
 You can easily contribute to the project by just reporting issues to [here](https://bitbucket.org/XtroTheArctic/Atesh/issues)
