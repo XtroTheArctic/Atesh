@@ -37,8 +37,4 @@
     <PackageReference Include="Atesh.Metalama" Version="1.1.0-beta5" />
   </ItemGroup>
 
-  <ItemGroup>
-    <MetalamaCompileTimePackage Include="Atesh.Metalama" />
-  </ItemGroup>
-
 </Project>
