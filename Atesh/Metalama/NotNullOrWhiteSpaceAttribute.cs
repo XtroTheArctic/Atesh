@@ -5,7 +5,7 @@ using Metalama.Framework.Code;
 
 namespace Atesh.Metalama;
 
-public class NotNullOrWhiteSpaceAttribute : ContractAspect
+public class NotNullOrWhiteSpaceAttribute : InputValidationAspect
 {
     // ReSharper disable once InconsistentNaming
     public override void Validate(dynamic? value)
