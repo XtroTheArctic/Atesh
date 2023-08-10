@@ -31,5 +31,5 @@ public class BaseClassExplicitInterfaceInvoker<T>
     }
 
     public void Invoke(T Object, string MethodName, params object[] Parameters) => FindMethod(MethodName).Invoke(Object, Parameters);
-    public ReturnType Invoke<ReturnType>(T Object, string MethodName, params object[] Parameters) => (ReturnType)FindMethod(MethodName).Invoke(Object, Parameters);
+    public TReturn Invoke<TReturn>(T Object, string MethodName, params object[] Parameters) => (TReturn)FindMethod(MethodName).Invoke(Object, Parameters);
 }
