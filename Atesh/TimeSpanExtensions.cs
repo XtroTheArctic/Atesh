@@ -3,7 +3,6 @@
 //
 // Improved by Onur "Xtro" Er and included in Atesh Framework / December 2014.
 
-using System;
 using System.Text;
 
 namespace Atesh;

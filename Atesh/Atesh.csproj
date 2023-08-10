@@ -16,6 +16,7 @@
     <RepositoryUrl>git@bitbucket.org:XtroTheArctic/atesh</RepositoryUrl>
     <Description>Atesh library is a collection of utilities.</Description>
     <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

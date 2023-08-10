@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Atesh;
+﻿namespace Atesh;
 
 public class ArgumentNullOrWhiteSpaceException : ArgumentException
 {
