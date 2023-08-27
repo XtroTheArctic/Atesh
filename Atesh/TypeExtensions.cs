@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using System.Reflection;
 
 namespace Atesh;
@@ -26,7 +23,7 @@ public static class TypeExtensions
 
     public static IReadOnlyCollection<MemberInfo> GetFieldsAndProperties(this Type This)
     {
-        if (FieldsAndProperties.ContainsKey(This)) return FieldsAndProperties[This];
+        if (FieldsAndProperties.TryGetValue(This, out var Value)) return Value;
 
         var Result = new List<MemberInfo>();
 
