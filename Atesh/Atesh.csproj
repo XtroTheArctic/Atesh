@@ -7,7 +7,7 @@
     <Company>Atesh Entertainment Inc.</Company>
     <Product>Atesh</Product>
     <Authors>The team members are listed in README.md file on project web page.</Authors>
-    <PackageLicenseUrl>http://unlicense.org</PackageLicenseUrl>
+    <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Atesh, Utilities</PackageTags>
     <AssemblyVersion>0.0.0.0</AssemblyVersion>
