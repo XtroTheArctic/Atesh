@@ -11,7 +11,7 @@ public static class TypeExtensions
     {
         var FullName = This.FullName;
         var Result = FullName[(FullName.LastIndexOf('.') + 1)..];
-        if (!string.IsNullOrWhiteSpace(This.Namespace)) Result = $"{Result} ({This.Namespace})";
+        if (This.Namespace.HasValue()) Result = $"{Result} ({This.Namespace})";
              
         return Result;
     }
