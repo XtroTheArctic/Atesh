@@ -32,7 +32,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Atesh.Metalama" Version="1.1.6" />
+    <PackageReference Include="Atesh.Metalama" Version="1.2.0-beta1" />
   </ItemGroup>
 
 </Project>
