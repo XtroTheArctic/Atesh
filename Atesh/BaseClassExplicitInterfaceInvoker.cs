@@ -9,7 +9,7 @@ namespace Atesh;
 
 public class BaseClassExplicitInterfaceInvoker<T>
 {
-    readonly Dictionary<string, MethodInfo> Cache = new();
+    readonly Dictionary<string, MethodInfo> Cache = [];
 
     MethodInfo FindMethod(string MethodName)
     {

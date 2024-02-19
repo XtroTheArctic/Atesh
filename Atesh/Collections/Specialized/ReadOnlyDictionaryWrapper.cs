@@ -4,16 +4,14 @@ using System.Diagnostics.CodeAnalysis;
 namespace Atesh.Collections.Specialized;
 
 // This solution is from https://stackoverflow.com/a/66193734/2595856
-class ReadOnlyDictionaryWrapper<TKey, TValue, TReadOnlyValue> : IReadOnlyDictionary<TKey, TReadOnlyValue> where TValue : TReadOnlyValue where TKey : notnull
+class ReadOnlyDictionaryWrapper<TKey, TValue, TReadOnlyValue>(IDictionary<TKey, TValue> Dictionary) : IReadOnlyDictionary<TKey, TReadOnlyValue> where TValue : TReadOnlyValue where TKey : notnull
 {
     public IEnumerable<TKey> Keys => Dictionary.Keys;
     public IEnumerable<TReadOnlyValue> Values => Dictionary.Values.Cast<TReadOnlyValue>();
     public int Count => Dictionary.Count;
     public TReadOnlyValue this[TKey Key] => Dictionary[Key];
 
-    readonly IDictionary<TKey, TValue> Dictionary;
-
-    public ReadOnlyDictionaryWrapper(IDictionary<TKey, TValue> Dictionary) => this.Dictionary = Dictionary ?? throw new ArgumentNullException(nameof(Dictionary));
+    readonly IDictionary<TKey, TValue> Dictionary = Dictionary ?? throw new ArgumentNullException(nameof(Dictionary));
 
     public bool ContainsKey(TKey Key) => Dictionary.ContainsKey(Key);
 

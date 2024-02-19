@@ -5,7 +5,7 @@ namespace Atesh;
 
 public static class TypeExtensions
 {
-    static readonly Dictionary<Type, IReadOnlyCollection<MemberInfo>> FieldsAndProperties = new();
+    static readonly Dictionary<Type, IReadOnlyCollection<MemberInfo>> FieldsAndProperties = [];
 
     public static string NameAndNameSpace(this Type This)
     {
@@ -18,7 +18,7 @@ public static class TypeExtensions
 
     public static bool IsStruct(this Type This) => This.IsValueType && !This.IsPrimitive && !This.IsEnum;
 
-    public static IEnumerable<PropertyDescriptor> GetBrowsableProperties(this Type This) => TypeDescriptor.GetProperties(This, new Attribute[] { BrowsableAttribute.Yes }).Cast<PropertyDescriptor>();
+    public static IEnumerable<PropertyDescriptor> GetBrowsableProperties(this Type This) => TypeDescriptor.GetProperties(This, [BrowsableAttribute.Yes]).Cast<PropertyDescriptor>();
     public static IEnumerable<PropertyDescriptor> GetSerializableProperties(this Type This) => TypeDescriptor.GetProperties(This).Cast<PropertyDescriptor>().Where(X => !X.IsReadOnly && X.SerializationVisibility != DesignerSerializationVisibility.Hidden);
 
     public static IReadOnlyCollection<MemberInfo> GetFieldsAndProperties(this Type This)
