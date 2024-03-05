@@ -5,7 +5,7 @@ namespace Atesh;
 
 public static class TypeExtensions
 {
-    static readonly Dictionary<Type, IReadOnlyCollection<MemberInfo>> FieldsAndPropertiesCollectionByType = [];
+    static readonly Dictionary<Type, IReadOnlyCollection<MemberInfo>> TypeFieldsAndProperties = [];
 
     public static string NameAndNameSpace(this Type This)
     {
@@ -23,7 +23,7 @@ public static class TypeExtensions
 
     public static IReadOnlyCollection<MemberInfo> GetFieldsAndProperties(this Type This)
     {
-        if (FieldsAndPropertiesCollectionByType.TryGetValue(This, out var FieldsAndProperties)) return FieldsAndProperties;
+        if (TypeFieldsAndProperties.TryGetValue(This, out var FieldsAndProperties)) return FieldsAndProperties;
 
         var Result = new List<MemberInfo>();
 
@@ -37,6 +37,6 @@ public static class TypeExtensions
             Type = Type.BaseType;
         }
 
-        return FieldsAndPropertiesCollectionByType[This] = Result.AsReadOnly();
+        return TypeFieldsAndProperties[This] = Result.AsReadOnly();
     }
 }

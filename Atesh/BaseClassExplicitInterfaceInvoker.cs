@@ -9,11 +9,11 @@ namespace Atesh;
 
 public class BaseClassExplicitInterfaceInvoker<T>
 {
-    readonly Dictionary<string, MethodInfo> MethodsByMethodName = [];
+    readonly Dictionary<string, MethodInfo> MethodsByName = [];
 
     MethodInfo FindMethod(string MethodName)
     {
-        if (MethodsByMethodName.TryGetValue(MethodName, out var Result)) return Result;
+        if (MethodsByName.TryGetValue(MethodName, out var Result)) return Result;
 
         var BaseType = typeof(T);
 
@@ -25,7 +25,7 @@ public class BaseClassExplicitInterfaceInvoker<T>
             Result = Methods.FirstOrDefault(X => X.IsFinal && X.IsPrivate && (X.Name == MethodName || X.Name.EndsWith("." + MethodName, StringComparison.Ordinal)));
         }
 
-        if (Result is { }) MethodsByMethodName.Add(MethodName, Result);
+        if (Result is { }) MethodsByName.Add(MethodName, Result);
 
         return Result;
     }
