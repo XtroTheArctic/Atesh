@@ -5,7 +5,7 @@ namespace Atesh;
 
 public static class TypeExtensions
 {
-    static readonly Dictionary<Type, IReadOnlyCollection<MemberInfo>> FieldsAndProperties = [];
+    static readonly Dictionary<Type, IReadOnlyCollection<MemberInfo>> FieldsAndPropertiesOfTypes = [];
 
     public static string NameAndNameSpace(this Type This)
     {
@@ -23,20 +23,20 @@ public static class TypeExtensions
 
     public static IReadOnlyCollection<MemberInfo> GetFieldsAndProperties(this Type This)
     {
-        if (FieldsAndProperties.TryGetValue(This, out var Value)) return Value;
+        if (FieldsAndPropertiesOfTypes.TryGetValue(This, out var Result)) return Result;
 
-        var Result = new List<MemberInfo>();
+        Result = [];
 
         // GetMembers doesn't return inherited private fields so, we loop for base classes with DeclaredOnly flag.
         var Type = This;
 
         while (Type != typeof(object))
         {
-            Result.AddRange(Type.GetMembers(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly).Where(X => X.MemberType is MemberTypes.Field or MemberTypes.Property));
+            ((List<MemberInfo>)Result).AddRange(Type.GetMembers(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly).Where(X => X.MemberType is MemberTypes.Field or MemberTypes.Property));
 
             Type = Type.BaseType;
         }
 
-        return FieldsAndProperties[This] = Result.AsReadOnly();
+        return FieldsAndPropertiesOfTypes[This] = Result;
     }
 }
