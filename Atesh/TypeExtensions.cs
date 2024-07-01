@@ -25,7 +25,7 @@ public static class TypeExtensions
     {
         if (FieldsAndPropertiesOfTypes.TryGetValue(This, out var Result)) return Result;
 
-        Result = new List<MemberInfo>();
+        Result = [];
 
         // GetMembers doesn't return inherited private fields so, we loop for base classes with DeclaredOnly flag.
         var Type = This;
