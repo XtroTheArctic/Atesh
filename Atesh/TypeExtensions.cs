@@ -23,16 +23,16 @@ public static class TypeExtensions
 
     public static IReadOnlyCollection<MemberInfo> GetFieldsAndProperties(this Type This)
     {
-        if (FieldsAndPropertiesOfTypes.TryGetValue(This, out var Result)) return Result;
+        if (FieldsAndPropertiesOfTypes.TryGetValue(This, out var Value)) return Value;
 
-        Result = [];
+        var Result = new List<MemberInfo>();
 
         // GetMembers doesn't return inherited private fields so, we loop for base classes with DeclaredOnly flag.
         var Type = This;
 
         while (Type != typeof(object))
         {
-            ((List<MemberInfo>)Result).AddRange(Type.GetMembers(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly).Where(X => X.MemberType is MemberTypes.Field or MemberTypes.Property));
+            Result.AddRange(Type.GetMembers(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.DeclaredOnly).Where(X => X.MemberType is MemberTypes.Field or MemberTypes.Property));
 
             Type = Type.BaseType;
         }

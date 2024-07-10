@@ -6,7 +6,7 @@ Atesh library is a collection of utilities.
 
 - **OrderedHashSet:** A better HashSet alternative.
 - **ArgumentNullOrWhiteSpaceException:** Used for String parameter validation.
-- **NotNullOrWhiteSpace** PostSharp aspect: Used together with its exception type.
+- **NotNullOrWhiteSpace** Metalama aspect: Used together with its exception type.
 - **IInternalsProvider** interface and **BaseClassExplicitInterfaceInvoker** class: Used for implementing "Internals" pattern.
 - **Extension methods** for some built-in types: Float, String, TimeSpan, etc...
 
@@ -27,9 +27,9 @@ Download it via "manual download" link in [NuGet](https://www.nuget.org/packages
 
 # Distribution
 
-Atesh library references Atesh.Metalama library which references Metalama.Framework library therefore, referencing Atesh in your own project will automatically make your project to use the Metalama system.
+Atesh library references Atesh.Metalama library which references Metalama.Framework library therefore, referencing Atesh in your own project will automatically make your project to use the Metalama framework.
 
-By using Metalama system in your project, you will be able to implement your own Metalama aspects. If that's what you want, you can keep the package reference in your `.csproj` file unmodified:
+By using Metalama framework in your project, you will be able to implement your own Metalama aspects. If that's what you want, you can keep the package reference in your `.csproj` file unmodified:
 
 ```
   <ItemGroup>
@@ -59,14 +59,6 @@ Project page on [Bitbucket](https://bitbucket.org/XtroTheArctic/Atesh)
 Git Repo URL: git@bitbucket.org:XtroTheArctic/atesh.git
 
 Please feel free to contact the team members via email at any time.
-
-## How To Build
-
-If you want to build the library from source code to contribute to the project or for another reason, you must install the PostSharp Visual Studio extension first.
-
-After installing the extension, you need to get a PostSharp community license for free. You can request the license in PostSharp license section of Visual Studio options window or on thier website directly.
-
-PostSharp is the #1 pattern-aware extension to C# and VB. It allows developers to eradicate boilerplate by offloading repeating work from humans to machines. Please see [PostSharp Documentation](https://doc.postsharp.net) for more info.
 
 # The Unlicense
 
