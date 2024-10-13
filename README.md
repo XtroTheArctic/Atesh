@@ -10,7 +10,6 @@ Atesh library is a collection of utilities.
 - **IInternalsProvider** interface and **BaseClassExplicitInterfaceInvoker** class: Used for implementing "Internals" pattern.
 - **Extension methods** for some built-in types: Float, String, TimeSpan, etc...
 
-
 # Team Members
 
 * Project Lead: Onur "Xtro" Er, Atesh Entertainment Inc. onurer@gmail.com
