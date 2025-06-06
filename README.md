@@ -10,7 +10,6 @@ Atesh library is a collection of utilities.
 - **IInternalsProvider** interface and **BaseClassExplicitInterfaceInvoker** class: Used for implementing "Internals" pattern.
 - **Extension methods** for some built-in types: Float, String, TimeSpan, etc...
 
-
 # Team Members
 
 * Project Lead: Onur "Xtro" Er, Atesh Entertainment Inc. onurer@gmail.com
@@ -50,13 +49,13 @@ You can see the distribution section of [Metalama Documentation](https://doc.met
 
 # Contribution
 
-You can easily contribute to the project by just reporting issues to [here](https://bitbucket.org/XtroTheArctic/Atesh/issues)
+You can easily contribute to the project by just reporting issues to [here](https://github.com/XtroTheArctic/Atesh/issues)
 
-If you want to get involved and actively contribute to the project, you can simply do so by sending pull requests to the project lead via bitbucket.com.
+If you want to get involved and actively contribute to the project, you can simply do so by sending pull requests to the project lead via github.com.
 
-Project page on [Bitbucket](https://bitbucket.org/XtroTheArctic/Atesh)
+Project page on [GitHub](git@github.com:XtroTheArctic/Atesh.git)
 
-Git Repo URL: git@bitbucket.org:XtroTheArctic/atesh.git
+Git Repo URL: git@github.com:XtroTheArctic/Atesh.git
 
 Please feel free to contact the team members via email at any time.
 
