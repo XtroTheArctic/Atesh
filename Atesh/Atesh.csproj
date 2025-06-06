@@ -10,8 +10,8 @@
     <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Atesh, Utilities</PackageTags>
-    <PackageProjectUrl>https://bitbucket.org/XtroTheArctic/atesh</PackageProjectUrl>
-    <RepositoryUrl>git@bitbucket.org:XtroTheArctic/atesh</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/XtroTheArctic/Atesh</PackageProjectUrl>
+    <RepositoryUrl>git@github.com:XtroTheArctic/Atesh.git</RepositoryUrl>
     <Description>Atesh library is a collection of utilities.</Description>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
