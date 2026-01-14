@@ -2,8 +2,11 @@
 
 public static class StringExtensions
 {
-    public static bool HasValue(this string This) => !string.IsNullOrWhiteSpace(This);
-    public static bool HasValue_WhiteSpaceAllowed(this string This) => !string.IsNullOrEmpty(This);
+    extension(string This)
+    {
+        public bool HasValue => !string.IsNullOrWhiteSpace(This);
+        public bool HasValue_WhiteSpaceAllowed => !string.IsNullOrEmpty(This);
 
-    public static string Replace(this string This, char[] OldChars, string NewValue) => string.Join(NewValue, This.Split(OldChars, StringSplitOptions.RemoveEmptyEntries));
+        public string Replace(char[] OldChars, string NewValue) => string.Join(NewValue, This.Split(OldChars, StringSplitOptions.RemoveEmptyEntries));
+    }
 }
