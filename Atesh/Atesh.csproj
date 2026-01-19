@@ -15,7 +15,6 @@
     <Description>Atesh library is a collection of utilities.</Description>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <MetalamaLicense>111995-ZULC8QQQXEAET3QCB88YNBFRY2EWBQGVS8KTXGYQSETE7BFVE6ZTZH99MQ2G7Y3CJ2T5JX3696LRCDV9QTCMYCD4PKL9HQEMUGCXL4TVRYGFRNQLCA4NUSQQBTKDGDWQHEQKPZUXVDVKBJKP</MetalamaLicense>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
