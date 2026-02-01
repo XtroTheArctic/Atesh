@@ -91,10 +91,8 @@ public static class TimeSpanExtensions
                     else StringBuilder.Append(This.Seconds);
 
                     break;
-                default: // Pass through any non recognized characters  
-                    StringBuilder.Append(Format[I]);
-
-                    break;
+                // Pass through any non recognized characters
+                default: StringBuilder.Append(Format[I]); break;
                 }
             }
 
